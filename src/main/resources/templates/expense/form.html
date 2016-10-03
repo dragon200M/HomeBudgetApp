@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wydatki</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.3/jquery.min.js"
+            th:src="@{/webjars/jquery/2.2.3/jquery.min.js}"></script>
+
+    <link href="../../static/css/style.css"
+          th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <div class="well">
+
+
+
+    <div>
+        <h2>Dodaj wydatek</h2>
+    </div>
+
+    <div class="form-group">
+
+        <form  th:object="${container}" th:action="@{/expenses}" method="post">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Kategoria</th>
+                    <th>Kwota</th>
+                    <th>Opis</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+                <tr th:each="el, stat : *{expenseDetailList}">
+
+                    <td><select class="btn btn-md size" th:field="*{expenseDetailList[__${stat.index}__].category}">
+                        <option class="dropdown-item" th:each="var : ${category}"
+                                th:value="${var.id}"
+                                th:text="${var.categoryName}">
+
+                        </option>
+
+                    </select>
+                    </td>
+                    <td><input class="form-control size"  type="text" th:field="*{expenseDetailList[__${stat.index}__].amount}"/></td>
+                    <td><input class="form-control size2"  type="text" th:field="*{expenseDetailList[__${stat.index}__].description}"/></td>
+
+
+                </tr>
+
+                </tbody>
+
+            </table>
+                <button class="btn btn-primary btn-md own  fo " type="submit"> Zapisz</button>
+
+
+        </form>
+    </div>
+            <h6 class="fo" th:text="${date}" style="text-align: right">z</h6>
+   </div>
+ </div>
+</body>
+</html>
+
+
+
+

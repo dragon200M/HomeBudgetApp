@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wydatki</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.3/jquery.min.js"
+            th:src="@{/webjars/jquery/2.2.3/jquery.min.js}"></script>
+
+    <link href="../../static/css/style.css"
+          th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body>
+<div class="container">
+
+    <div class="show-user">
+         <div>
+            <label>ID:</label>
+            <div>
+                <p  th:text="${user.userId}">id</p>
+            </div>
+        </div>
+
+            <div>
+                <label>Nazwa użytkownika:</label>
+                <div>
+                    <p  th:text="${user.userName}"></p>
+                </div>
+            </div>
+
+            <div>
+                <label>Imie:</label>
+                <div>
+                    <p  th:text="${user.firstName}"></p>
+                </div>
+            </div>
+
+            <div>
+                <label>Nazwisko:</label>
+                <div>
+                    <p  th:text="${user.lastName}"></p>
+                </div>
+            </div>
+            <div>
+            <label>Email</label>
+            <div>
+                <p  th:text="${user.userEmail}"></p>
+            </div>
+            </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

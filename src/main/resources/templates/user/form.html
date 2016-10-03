@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wydatki</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+
+    <link href="../../static/css/style.css"
+          th:href="@{/css/style.css}" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body>
+
+<div class="container2">
+
+        <div class="row main">
+
+            <div class="main-login main-center">
+                <div class="panel-title text-center">
+                    <h1 class="title">Dodaj użytkownika</h1>
+
+                </div>
+
+
+                <form class="form-horizontal" th:object="${user}" th:action="@{/user}" method="post">
+                    <input type="hidden" th:field="*{userId}"/>
+                    <input type="hidden" th:field="*{userVersion}"/>
+
+                    <div class="form-group">
+                        <label for="name" class="cols-sm-2 control-label">Imie</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input type="text" th:field="*{firstName}"  class="form-control" name="name" id="name"  placeholder="Podaj swoje imię"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="cols-sm-2 control-label">Nazwisko</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                <input type="text" th:field="*{lastName}" class="form-control" name="lastname" id="lastname"  placeholder="Podaj swoje nazwisko"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">Użytkownik</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                <input type="text" th:field="*{userName}" class="form-control" name="username" id="username"  placeholder="Podaj swoją nazwę użytkownika"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="cols-sm-2 control-label">Email</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                <input type="text" th:field="*{userEmail}" class="form-control" name="email" id="email"  placeholder="Podaj swój email"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="cols-sm-2 control-label">Hasło</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="password" th:field="*{passwordText}" class="form-control" name="password" id="password"  placeholder="Podaj hasło"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm" class="cols-sm-2 control-label">Potwierdź hasło</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                <input type="password"  th:field="*{passwordTextConf}" class="form-control" name="confirm" id="confirm"  placeholder="Potwierdź swoje hasło"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Dodaj</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript"  th:href="@{/webjars/bootstrap/3.3.6/js/bootstrap.js}"></script>
+
+
+
+</body>
+</html>
+
+
+
+
